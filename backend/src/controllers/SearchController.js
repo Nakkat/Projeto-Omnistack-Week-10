@@ -9,11 +9,11 @@ module.exports = {
         
         const { latitude, longitude, techs } = req.query;
         
-        const TechsArray = parseStringAsArray(techs);
+        const techsArray = parseStringAsArray(techs);
        
         const devs = await Dev.find({
             techs: {
-                $in: TechsArray
+                $in: techsArray
             },
             location: {
                 $near: {
